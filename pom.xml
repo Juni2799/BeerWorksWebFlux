@@ -30,6 +30,8 @@
 		<java.version>17</java.version>
 		<lombok.version>1.18.24</lombok.version>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
+		<logbook.version>3.11.0</logbook.version>
+		<logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,6 +60,30 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- Below 2 dependencies are added for generating the request and response logs of our application -->
+		<dependency>
+			<groupId>org.zalando</groupId>
+			<artifactId>logbook-spring-boot-starter</artifactId>
+			<version>${logbook.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zalando</groupId>
+			<artifactId>logbook-spring-boot-webflux-autoconfigure</artifactId>
+			<version>${logbook.version}</version>
+		</dependency>
+
+		<!-- Below 2 dependencies are for generating a compiled-together form of JSON output of our logs. -->
+		<dependency>
+			<groupId>org.zalando</groupId>
+			<artifactId>logbook-logstash</artifactId>
+			<version>${logbook.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>${logstash-logback-encoder.version}</version>
 		</dependency>
 
 		<dependency>
